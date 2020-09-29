@@ -1,12 +1,14 @@
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Created by dev on 12/01/2016.
+ */
 public class HeavenlyBody {
     private final String name;
     private final double orbitalPeriod;
     private final Set<HeavenlyBody> satellites;
     private final BodyTypes bodyType;
-
     public enum BodyTypes {
         STAR,
         PLANET,
@@ -23,16 +25,16 @@ public class HeavenlyBody {
         this.bodyType = bodyType;
     }
 
+    public BodyTypes getBodyType() {
+        return bodyType;
+    }
+
     public String getName() {
         return name;
     }
 
     public double getOrbitalPeriod() {
         return orbitalPeriod;
-    }
-
-    public BodyTypes getBodyType() {
-        return bodyType;
     }
 
     public boolean addSatellite(HeavenlyBody moon) {
@@ -49,7 +51,6 @@ public class HeavenlyBody {
         if(this == obj) {
             return true;
         }
-
         if(obj instanceof HeavenlyBody) {
             HeavenlyBody theObject = (HeavenlyBody) obj;
             if(this.name.equals(theObject.getName())) {
@@ -69,4 +70,3 @@ public class HeavenlyBody {
         return this.name + ": " + this.bodyType + ", " + this.orbitalPeriod;
     }
 }
-
